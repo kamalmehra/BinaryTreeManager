@@ -1,6 +1,6 @@
 package com.kamal.binarytreemanager;
 
-class TreeNode {
+public class TreeNode {
     int data;
     TreeNode left;
     TreeNode right;

@@ -8,14 +8,13 @@ public class BinaryTreeManager {
         // Create instances of TreeBuilder, TreeManipulator, and TreePrinter
         TreeBuilder treeBuilder = new TreeBuilder();
         TreeManipulator treeManipulator = new TreeManipulator();
-        TreeNode rootNode = null; // Initialize root node
         TreePrinter treePrinter = new TreePrinter();
 
         // Create a single Scanner for input
         Scanner scanner = new Scanner(System.in);
 
         // Take user input, build the tree, and remove a node
-        rootNode = treeBuilder.buildTree(scanner);
+        TreeNode rootNode = treeBuilder.buildTree(scanner);
 
         if (rootNode != null) {
             treePrinter.printLevelOrder(rootNode);

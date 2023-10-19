@@ -1,7 +1,5 @@
 package com.kamal.binarytreemanager;
 
-import com.kamal.binarytreemanager.TreeManipulator;
-import com.kamal.binarytreemanager.TreeNode;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

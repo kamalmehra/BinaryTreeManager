@@ -7,7 +7,6 @@ import java.util.Scanner;
 
 public class TreeBuilder {
     public TreeNode buildTree(Scanner scanner) {
-        TreeNode root = null; // Initialize root node
 
         System.out.println("Enter the root node value (or -1 to skip creating the tree):");
         int rootData = getUserInput(scanner);
@@ -17,7 +16,7 @@ public class TreeBuilder {
             return null;
         }
 
-        root = new TreeNode(rootData);
+        TreeNode root = new TreeNode(rootData);
         Queue<TreeNode> queue = new LinkedList<>();
         queue.add(root);
 
