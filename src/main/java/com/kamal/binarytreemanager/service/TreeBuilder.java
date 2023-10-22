@@ -44,7 +44,7 @@ public class TreeBuilder {
         final Queue<TreeNode> queue = new LinkedList<>();
         queue.add(root);
 
-        for (int level = 0; !queue.isEmpty(); ++level) {
+        for (int level = 1; !queue.isEmpty(); ++level) {
             int levelSize = queue.size();
             System.out.println(String.format(LEVEL_PROMPT, level));
 
