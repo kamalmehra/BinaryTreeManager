@@ -1,17 +1,31 @@
-package com.kamal.binarytreemanager;
+package com.kamal.binarytreemanager.presentation;
+
+
+import com.kamal.binarytreemanager.domain.TreeNode;
 
 import java.util.LinkedList;
 import java.util.Queue;
 
+/**
+ * Class for printing binary trees.
+ */
 public class TreePrinter {
-    // Function to print the binary tree level by level
-    public void printLevelOrder(TreeNode root) {
+    private static final String EMPTY_TREE_MESSAGE = "The tree is empty.";
+    private static final String LEVEL_PREFIX = "Level ";
+    private static final String NULL_NODE = "-1 ";
+
+    /**
+     * Print the binary tree in level order.
+     *
+     * @param root The root node of the binary tree.
+     */
+    public void printLevelOrder(final TreeNode root) {
         if (root == null) {
-            System.out.println("The tree is empty.");
+            System.out.println(EMPTY_TREE_MESSAGE);
             return;
         }
 
-        Queue<TreeNode> queue = new LinkedList<>();
+        final Queue<TreeNode> queue = new LinkedList<>();
         queue.add(root);
 
         int level = 0;
@@ -20,7 +34,7 @@ public class TreePrinter {
             int levelSize = queue.size();
             boolean levelContainsNonNullNodes = false;
 
-            System.out.print("Level " + level + ": ");
+            System.out.print(LEVEL_PREFIX + level + ": ");
             for (int i = 0; i < levelSize; i++) {
                 TreeNode current = queue.poll();
 
@@ -40,7 +54,7 @@ public class TreePrinter {
                         queue.add(null); // Add null for missing right child
                     }
                 } else {
-                    System.out.print("-1 ");
+                    System.out.print(NULL_NODE);
                 }
             }
 

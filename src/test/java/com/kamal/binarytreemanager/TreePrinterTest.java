@@ -1,5 +1,7 @@
 package com.kamal.binarytreemanager;
 
+import com.kamal.binarytreemanager.domain.TreeNode;
+import com.kamal.binarytreemanager.presentation.TreePrinter;
 import org.junit.jupiter.api.Test;
 
 import java.io.ByteArrayOutputStream;

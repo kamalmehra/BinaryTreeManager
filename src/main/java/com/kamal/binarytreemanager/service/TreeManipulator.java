@@ -1,11 +1,23 @@
-package com.kamal.binarytreemanager;
+package com.kamal.binarytreemanager.service;
+
+import com.kamal.binarytreemanager.domain.TreeNode;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
+/**
+ * Class for manipulating binary trees.
+ */
 public class TreeManipulator {
+    /**
+     * Remove a node from the binary tree and return the roots of subtrees.
+     *
+     * @param root        The root node of the binary tree.
+     * @param nodeToRemove The value of the node to be removed.
+     * @return A list of root nodes of subtrees.
+     */
     public List<TreeNode> removeNodeAndReturnSubtrees(TreeNode root, int nodeToRemove) {
         List<TreeNode> rootTreeNodes = new ArrayList<>();
 
