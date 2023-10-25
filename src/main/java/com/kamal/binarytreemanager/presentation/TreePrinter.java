@@ -1,7 +1,7 @@
 package com.kamal.binarytreemanager.presentation;
 
 
-import com.kamal.binarytreemanager.domain.TreeNode;
+import com.kamal.binarytreemanager.model.TreeNode;
 
 import java.util.LinkedList;
 import java.util.Queue;
@@ -35,7 +35,7 @@ public class TreePrinter {
             boolean levelContainsNonNullNodes = false;
 
             System.out.print(LEVEL_PREFIX + level + ": ");
-            for (int i = 0; i < levelSize; i++) {
+            for (int i = 1; i < levelSize; i++) {
                 TreeNode current = queue.poll();
 
                 if (current != null) {

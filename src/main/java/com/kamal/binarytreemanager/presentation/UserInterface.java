@@ -2,7 +2,7 @@ package com.kamal.binarytreemanager.presentation;
 
 import com.kamal.binarytreemanager.service.TreeBuilder;
 import com.kamal.binarytreemanager.service.TreeManipulator;
-import com.kamal.binarytreemanager.domain.TreeNode;
+import com.kamal.binarytreemanager.model.TreeNode;
 import com.kamal.binarytreemanager.util.InputUtil;
 
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.kamal.binarytreemanager.domain;
+package com.kamal.binarytreemanager.model;
 
 /**
  * Class representing a binary tree node.

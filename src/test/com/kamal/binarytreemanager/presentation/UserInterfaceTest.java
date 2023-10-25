@@ -2,14 +2,13 @@ package com.kamal.binarytreemanager.presentation;
 
 import com.kamal.binarytreemanager.service.TreeBuilder;
 import com.kamal.binarytreemanager.service.TreeManipulator;
-import com.kamal.binarytreemanager.domain.TreeNode;
+import com.kamal.binarytreemanager.model.TreeNode;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
-import java.util.List;
 import java.util.Scanner;
 
 import static org.junit.jupiter.api.Assertions.*;

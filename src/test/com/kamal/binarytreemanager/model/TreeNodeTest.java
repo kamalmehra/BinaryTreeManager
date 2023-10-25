@@ -1,4 +1,4 @@
-package com.kamal.binarytreemanager.domain;
+package com.kamal.binarytreemanager.model;
 
 import org.junit.jupiter.api.Test;
 

@@ -1,6 +1,6 @@
 package com.kamal.binarytreemanager.service;
 
-import com.kamal.binarytreemanager.domain.TreeNode;
+import com.kamal.binarytreemanager.model.TreeNode;
 import com.kamal.binarytreemanager.util.InputUtil;
 
 import java.util.LinkedList;
@@ -10,7 +10,6 @@ import java.util.Scanner;
 public class TreeBuilder {
     private static final String ROOT_NODE_PROMPT = "Enter the root node value (or -1 to skip creating the tree): ";
     private static final String TREE_CREATION_SKIPPED_MESSAGE = "Tree creation skipped.";
-
     private static final String LEVEL_PROMPT = "Enter nodes for level %d:";
     private static final String LEFT_CHILD_PROMPT = "Enter left child value of %d (or -1 for no left child): ";
     private static final String RIGHT_CHILD_PROMPT = "Enter right child value of %d (or -1 for no right child): ";

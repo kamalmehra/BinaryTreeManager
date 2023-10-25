@@ -1,6 +1,6 @@
 package com.kamal.binarytreemanager.service;
 
-import com.kamal.binarytreemanager.domain.TreeNode;
+import com.kamal.binarytreemanager.model.TreeNode;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
