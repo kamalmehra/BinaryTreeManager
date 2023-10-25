@@ -2,7 +2,6 @@ package com.kamal.binarytreemanager.presentation;
 
 import com.kamal.binarytreemanager.service.BinaryTreeManipulator;
 import com.kamal.binarytreemanager.service.TreeBuilder;
-import com.kamal.binarytreemanager.service.BinaryTreeManipulator;
 import com.kamal.binarytreemanager.model.TreeNode;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -18,14 +17,14 @@ import static org.mockito.Mockito.*;
 public class UserInterfaceTest {
     private final TreeBuilder treeBuilder = mock(TreeBuilder.class);
     private final BinaryTreeManipulator treeManipulator = mock(BinaryTreeManipulator.class);
-    private final TreePrinter treePrinter = mock(TreePrinter.class);
+    private final LevelTreePrinter levelTreePrinter = mock(LevelTreePrinter.class);
 
     private UserInterface userInterface;
     private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
 
     @BeforeEach
     public void setUp() {
-        userInterface = new UserInterface(treeBuilder, treeManipulator, treePrinter);
+        userInterface = new UserInterface(treeBuilder, treeManipulator, levelTreePrinter);
         System.setOut(new PrintStream(outContent));
     }
 
@@ -40,7 +39,7 @@ public class UserInterfaceTest {
 
         // Assert
         assertTrue(outContent.toString().contains("Tree is empty! Exiting."));
-        verify(treePrinter, never()).printLevelOrder(any(TreeNode.class));
+        verify(levelTreePrinter, never()).printTree(any(TreeNode.class));
         verify(treeManipulator, never()).findNodeAndReturnSubtrees(any(TreeNode.class), anyInt());
     }
 }

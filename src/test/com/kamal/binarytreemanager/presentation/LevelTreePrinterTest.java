@@ -12,10 +12,10 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.mock;
 
 /**
- * Test cases for the TreePrinter class.
+ * Test cases for the LevelTreePrinter class.
  */
-public class TreePrinterTest {
-    private final TreePrinter treePrinter = new TreePrinter();
+public class LevelTreePrinterTest {
+    private final LevelTreePrinter levelTreePrinter = new LevelTreePrinter();
     private final TreeNode root = new TreeNode(1);
     private final TreeNode leftNode = new TreeNode(2);
     private final TreeNode rightNode = new TreeNode(3);
@@ -37,7 +37,7 @@ public class TreePrinterTest {
         // No need to mock the TreeNode, as it's an empty tree
 
         // Act
-        treePrinter.printLevelOrder(null);
+        levelTreePrinter.printTree(null);
 
         // Assert
         assertTrue(outContent.toString().contains("The tree is empty."));
@@ -52,7 +52,7 @@ public class TreePrinterTest {
         leftNode.left = leftLeftNode;
 
         // Act
-        treePrinter.printLevelOrder(root);
+        levelTreePrinter.printTree(root);
 
         // Assert
         // Check if the expected structure is printed
@@ -81,7 +81,7 @@ public class TreePrinterTest {
         // The tree will have a single node at Level 0
 
         // Act
-        treePrinter.printLevelOrder(root);
+        levelTreePrinter.printTree(root);
 
         // Assert
         // Check if the expected structure is printed

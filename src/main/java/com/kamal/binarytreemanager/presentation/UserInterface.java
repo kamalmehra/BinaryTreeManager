@@ -2,7 +2,6 @@ package com.kamal.binarytreemanager.presentation;
 
 import com.kamal.binarytreemanager.service.BinaryTreeManipulator;
 import com.kamal.binarytreemanager.service.TreeBuilder;
-import com.kamal.binarytreemanager.service.BinaryTreeManipulator;
 import com.kamal.binarytreemanager.model.TreeNode;
 import com.kamal.binarytreemanager.util.InputUtil;
 
@@ -36,7 +35,7 @@ public class UserInterface {
         TreeNode rootNode = treeBuilder.buildTree(scanner);
 
         if (rootNode != null) {
-            treePrinter.printLevelOrder(rootNode);
+            treePrinter.printTree(rootNode);
         } else {
             System.out.println(EXIT_MESSAGE);
             return;

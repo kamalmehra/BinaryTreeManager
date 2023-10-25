@@ -1,5 +1,6 @@
 package com.kamal.binarytreemanager.application;
 
+import com.kamal.binarytreemanager.presentation.LevelTreePrinter;
 import com.kamal.binarytreemanager.presentation.TreePrinter;
 import com.kamal.binarytreemanager.presentation.UserInterface;
 import com.kamal.binarytreemanager.service.BinaryTreeManipulatorImpl;
@@ -13,7 +14,7 @@ public class Main {
     public static void main(String[] args) {
         TreeBuilder treeBuilder = new TreeBuilder();
         BinaryTreeManipulator treeManipulator = new BinaryTreeManipulatorImpl();
-        TreePrinter treePrinter = new TreePrinter();
+        TreePrinter treePrinter = new LevelTreePrinter();
         final UserInterface userInterface = new UserInterface(treeBuilder, treeManipulator, treePrinter);
 
         // Start the user interface
