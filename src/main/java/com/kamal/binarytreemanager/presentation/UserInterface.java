@@ -1,7 +1,8 @@
 package com.kamal.binarytreemanager.presentation;
 
+import com.kamal.binarytreemanager.service.BinaryTreeManipulator;
 import com.kamal.binarytreemanager.service.TreeBuilder;
-import com.kamal.binarytreemanager.service.TreeManipulator;
+import com.kamal.binarytreemanager.service.BinaryTreeManipulator;
 import com.kamal.binarytreemanager.model.TreeNode;
 import com.kamal.binarytreemanager.util.InputUtil;
 
@@ -17,10 +18,10 @@ public class UserInterface {
     private static final String SUBTREE_MESSAGE = "Roots of Subtrees:";
     private static final String SUBTREE_TEMPLATE = "Subtree %d: %d";
     private final TreeBuilder treeBuilder;
-    private final TreeManipulator treeManipulator;
+    private final BinaryTreeManipulator treeManipulator;
     private final TreePrinter treePrinter;
 
-    public UserInterface(TreeBuilder treeBuilder, TreeManipulator treeManipulator, TreePrinter treePrinter) {
+    public UserInterface(TreeBuilder treeBuilder, BinaryTreeManipulator treeManipulator, TreePrinter treePrinter) {
         this.treeBuilder = treeBuilder;
         this.treeManipulator = treeManipulator;
         this.treePrinter = treePrinter;
@@ -42,7 +43,7 @@ public class UserInterface {
         }
 
         int nodeToRemove = InputUtil.getIntInput(scanner, REMOVE_NODE_PROMPT);
-        List<TreeNode> rootsOfSubtrees = treeManipulator.removeNodeAndReturnSubtrees(rootNode, nodeToRemove);
+        List<TreeNode> rootsOfSubtrees = treeManipulator.findNodeAndReturnSubtrees(rootNode, nodeToRemove);
         System.out.println(SUBTREE_MESSAGE);
 
         for (int i = 0; i < rootsOfSubtrees.size(); ++i) {

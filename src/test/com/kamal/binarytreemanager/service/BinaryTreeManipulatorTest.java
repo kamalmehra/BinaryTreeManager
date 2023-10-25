@@ -9,13 +9,13 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
 
-public class TreeManipulatorTest {
+public class BinaryTreeManipulatorTest {
 
-    private TreeManipulator treeManipulator;
+    private BinaryTreeManipulator treeManipulator;
 
     @BeforeEach
     public void setup() {
-        treeManipulator = new TreeManipulator();
+        treeManipulator = new BinaryTreeManipulatorImpl();
     }
 
     @Test
@@ -24,7 +24,7 @@ public class TreeManipulatorTest {
         root.left = new TreeNode(3);
         root.right = new TreeNode(7);
 
-        List<TreeNode> subtrees = treeManipulator.removeNodeAndReturnSubtrees(root, 3);
+        List<TreeNode> subtrees = treeManipulator.findNodeAndReturnSubtrees(root, 3);
 
         assertEquals(5, subtrees.get(0).data);
     }

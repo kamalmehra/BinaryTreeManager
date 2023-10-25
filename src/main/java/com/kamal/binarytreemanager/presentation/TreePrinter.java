@@ -35,7 +35,7 @@ public class TreePrinter {
             boolean levelContainsNonNullNodes = false;
 
             System.out.print(LEVEL_PREFIX + level + ": ");
-            for (int i = 1; i < levelSize; i++) {
+            for (int i = 0; i < levelSize; i++) {
                 TreeNode current = queue.poll();
 
                 if (current != null) {

@@ -10,7 +10,7 @@ import java.util.Queue;
 /**
  * Class for manipulating binary trees.
  */
-public class TreeManipulator {
+public class BinaryTreeManipulatorImpl implements BinaryTreeManipulator {
     /**
      * Remove a node from the binary tree and return the roots of subtrees.
      *
@@ -18,7 +18,8 @@ public class TreeManipulator {
      * @param nodeToRemove The value of the node to be removed.
      * @return A list of root nodes of subtrees.
      */
-    public List<TreeNode> removeNodeAndReturnSubtrees(TreeNode root, int nodeToRemove) {
+    @Override
+    public List<TreeNode> findNodeAndReturnSubtrees(TreeNode root, int nodeToRemove) {
         List<TreeNode> rootTreeNodes = new ArrayList<>();
 
         // Check if the tree is empty
