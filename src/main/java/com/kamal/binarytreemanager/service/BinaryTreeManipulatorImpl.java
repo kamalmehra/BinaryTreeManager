@@ -39,16 +39,34 @@ public class BinaryTreeManipulatorImpl implements BinaryTreeManipulator {
         while (!queue.isEmpty()) {
             TreeNode current = queue.poll(); // Dequeue a node from the queue
 
-            if (current.data == nodeToRemove) {
-                if (current.left != null) {
-                    rootTreeNodes.add(current.left);
-                }
+            //finding whether childs are the desired node
 
-                if (current.right != null) {
-                    rootTreeNodes.add(current.right);
+            if(current.left != null) {
+                if(current.left.data == nodeToRemove) {
+                    rootTreeNodes.add(current.left);
+                    rootTreeNodes = addChilds(current.left, rootTreeNodes);
+                    replaceNode(current, false);
                 }
-                return rootTreeNodes;
             }
+
+            if(current.right != null) {
+                if(current.right.data == nodeToRemove) {
+                    rootTreeNodes = addChilds(current.right, rootTreeNodes);
+                    replaceNode(current, true);
+                }
+            }
+
+//            if (current.data == nodeToRemove) {
+//
+//                if (current.left != null) {
+//                    rootTreeNodes.add(current.left);
+//                }
+//
+//                if (current.right != null) {
+//                    rootTreeNodes.add(current.right);
+//                }
+//                return rootTreeNodes;
+//            }
 
             // Enqueue the left child if it exists
             if (current.left != null) {
@@ -63,4 +81,48 @@ public class BinaryTreeManipulatorImpl implements BinaryTreeManipulator {
 
         return rootTreeNodes;
     }
+
+    public List<TreeNode> addChilds(TreeNode node, List<TreeNode> roots) {
+        if(node.left != null) {
+            roots.add(node.left);
+        }
+        if(node.right != null) {
+            roots.add(node.left);
+        }
+
+        return roots;
+    }
+
+    public void replaceNode(TreeNode current, boolean isRight) {
+        if(isRight) {
+            //node to replace is in right side of parent
+            if(current.right.right != null) {
+                current.right = current.right.right;
+            }
+            else if(current.right.left != null) {
+                current.right = current.right.left;
+            }
+
+            else {
+                current.right = null;
+            }
+        }
+
+        else {
+            if(current.left.right != null) {
+                current.left = current.left.right;
+            }
+            else if(current.left.left != null) {
+                current.left = current.left.left;
+            }
+
+            else {
+                current.left = null;
+            }
+        }
+    }
 }
+
+// 2
+// 1 3
+// 4 5 -1 -1

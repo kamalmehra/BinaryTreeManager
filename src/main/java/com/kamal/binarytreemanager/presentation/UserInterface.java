@@ -45,8 +45,8 @@ public class UserInterface {
         List<TreeNode> rootsOfSubtrees = treeManipulator.findNodeAndReturnSubtrees(rootNode, nodeToRemove);
         System.out.println(SUBTREE_MESSAGE);
 
-        for (int i = 0; i < rootsOfSubtrees.size(); ++i) {
-            System.out.println(String.format(SUBTREE_TEMPLATE, i + 1, rootsOfSubtrees.get(i).data));
+        for (int i = 0; i < rootsOfSubtrees.size(); i++) {
+            System.out.println(String.format(SUBTREE_TEMPLATE, i+1, rootsOfSubtrees.get(i).data));
         }
     }
 }
